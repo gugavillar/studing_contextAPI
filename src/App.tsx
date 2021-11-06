@@ -1,8 +1,12 @@
 import React from 'react';
+import { Catalog } from './components/Catalog';
+import { CartProvider } from './context/cart';
 
 function App() {
   return (
-    <h1>Hello World</h1>
+    <CartProvider>
+      <Catalog />
+    </CartProvider>
   );
 }
 
