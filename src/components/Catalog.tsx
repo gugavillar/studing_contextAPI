@@ -1,10 +1,9 @@
-import { useContext, useEffect, useState } from "react";
-import { CartContext, Product } from "../context/cart"
+import { useEffect, useState } from "react";
+import { Product } from "../context/cart"
 import { api } from "../services/api";
 import { CatalogItem } from "./CatalogItem";
 
 export function Catalog() {
-  const { items } = useContext(CartContext);
   const [catalog, setCatalog] = useState<Product[]>([]);
   useEffect(() => {
     api.get('products').then(response => setCatalog(response.data));
